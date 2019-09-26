@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--ver1-->
+<!--    <bean id="bookService" class="me.whiteship.springapplicationcontext.BookService">-->
+<!--    `bookService` 가 `bookRepository`를 받게 하려면-->
+<!--    <property name="bookRepository" ref="bookRepository"/>-->
+<!--    <bean/>-->
+<!--    autowire="" : 타입과 이름, 생성자, 안한다, 의 리스트가 있음-->
+<!--    <bean id="bookRepository" class="me.whiteship.springapplicationcontext.BookRepository"/>-->
+<!--ver2-->
+<!--
+    `me.whiteship.springapplicationcontext` 패키지 부터 스캔하겠다
+        Scanning 4가지
+            1. @Component
+-->
+<context:component-scan base-package="me.whiteship.springapplicationcontext"/>
+
+
+</beans>

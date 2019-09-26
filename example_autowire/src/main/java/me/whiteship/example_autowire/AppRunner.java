@@ -1,0 +1,30 @@
+package me.whiteship.example_autowire;
+
+import java.applet.AppletContext;
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+/**
+ * AppRunner
+ */
+@Component
+public class AppRunner implements ApplicationRunner {
+
+    @Autowired
+    ApplicationContext applicationContext;
+    
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        // TODO Auto-generated method stub
+        Environment environment = applicationContext.getEnvironment();
+        System.out.println(Arrays.toString(environment.getActiveProfiles()));// []
+        System.out.println(Arrays.toString(environment.getDefaultProfiles()));// [default]
+        
+    }
+}
